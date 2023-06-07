@@ -97,7 +97,7 @@
 	<% end %>
 	<br>
 	<% proof.steps.each do |i,s| %>
-		<span class="badge badge-secondary">
+		<span class="badge bg-secondary">
 			<%= i %>
 		</span>
 		<% if s[:conclusion] != :contradiction %>
@@ -121,7 +121,7 @@
 			<% elsif u.first == :axiom %>
 				<%= "A(#{u.second})" %>
 			<% elsif u.first == :step %>
-				<span class="badge badge-secondary">
+				<span class="badge bg-secondary">
 					<%= u.second %>
 				</span>
 			<% elsif u.first == :assumption %>
