@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_17_145540) do
+ActiveRecord::Schema[6.1].define(version: 2020_03_17_145540) do
 
   create_table "atoms", force: :cascade do |t|
     t.string "stuff_w_props_type"

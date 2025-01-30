@@ -7,15 +7,15 @@ end
 
 # gem 'activemodel-serializers-xml'
 gem 'coveralls', require: false
-gem 'globalize', '~> 6.0.0'
+gem 'globalize', '~> 6.1.0'
 gem 'globalize-accessors'
-gem 'rails-i18n'
+gem 'rails-i18n', '~> 7.0'
 gem 'sqlite3', '< 1.7'
 gem 'bootstrap'
 gem 'pg'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.0'
+gem 'rails', '<= 7.0.8'
 # Use Puma as the app server
 gem 'puma'
 # Use SCSS for stylesheets
@@ -43,11 +43,11 @@ gem 'ricosat'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.12.6', require: false
-gem 'trix-rails', '~> 2.3.0', require: 'trix'
+gem 'trix-rails', '~> 2.4', require: 'trix'
 gem 'sidekiq'
 gem 'sidekiq-status'
 gem 'fast_jsonapi'
-gem 'devise'
+gem 'devise', '>= 4.8.1'
 gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'mimemagic', '~> 0.3.10'
