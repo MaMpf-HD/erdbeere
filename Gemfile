@@ -5,18 +5,17 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'activemodel-serializers-xml'
-# gem 'bulma-rails', '~> 0.4.0'
+# gem 'activemodel-serializers-xml'
 gem 'coveralls', require: false
-gem 'globalize'
+gem 'globalize', '~> 6.0.0'
 gem 'globalize-accessors'
 gem 'rails-i18n'
-gem 'sqlite3'
+gem 'sqlite3', '< 1.7'
 gem 'bootstrap'
 gem 'pg'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.2.1'
+gem 'rails', '~> 6.1.0'
 # Use Puma as the app server
 gem 'puma'
 # Use SCSS for stylesheets
@@ -26,7 +25,6 @@ gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -45,7 +43,7 @@ gem 'ricosat'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'trix-rails', require: 'trix'
+gem 'trix-rails', '~> 2.3.0', require: 'trix'
 gem 'sidekiq'
 gem 'sidekiq-status'
 gem 'fast_jsonapi'
