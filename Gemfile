@@ -9,7 +9,7 @@ gem 'activemodel-serializers-xml'
 gem 'globalize', '~> 6.1.0'
 gem 'globalize-accessors'
 gem 'rails-i18n', '~> 7.0'
-gem 'sqlite3', '>= 1.7'
+gem 'sqlite3', '>= 1.7', '<= 1.7.3'
 gem 'bootstrap'
 gem 'pg'
 
