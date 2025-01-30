@@ -64,6 +64,9 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  # Whitelist localhost for Web Console
+  config.web_console.permissions = '127.0.0.1/32'
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
