@@ -1,5 +1,5 @@
 
-FROM ruby:2.7.0
+FROM ruby:3.0.7
 
 ENV RAILS_ENV=production
 
@@ -11,7 +11,7 @@ ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 
 
-RUN apt-get update && apt-get install -y nodejs sqlite3 nano picosat --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y nodejs pkg-config sqlite3 nano picosat --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 # Upgrade RubyGems to version 3.3.22
 # RUN gem update --system 3.3.22
