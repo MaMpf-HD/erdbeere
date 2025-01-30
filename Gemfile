@@ -42,7 +42,7 @@ gem 'ricosat'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootsnap', '>= 1.12.6', require: false
 gem 'trix-rails', '~> 2.3.0', require: 'trix'
 gem 'sidekiq'
 gem 'sidekiq-status'
@@ -51,6 +51,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'mimemagic', '~> 0.3.10'
+gem 'concurrent-ruby', '1.3.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -64,7 +65,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'bullet'
+  # gem 'bullet'
   gem 'listen', '~> 3.0.5'
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

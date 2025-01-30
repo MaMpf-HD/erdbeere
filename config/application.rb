@@ -16,5 +16,8 @@ module Erdbeere
     # -- all .rb files in that directory are automatically loaded.
     config.i18n.default_locale = :de
     config.i18n.fallbacks = true
+    
+    # config.time_zone = "Central Time (US & Canada)"
+    # config.eager_load_paths << Rails.root.join("extras")
   end
 end
