@@ -6,15 +6,15 @@ git_source(:github) do |repo_name|
 end
 
 gem 'activemodel-serializers-xml'
-gem 'globalize', '~> 6.1.0'
+gem 'globalize'
 gem 'globalize-accessors'
-gem 'rails-i18n', '~> 7.0'
-gem 'sqlite3', '>= 1.7', '<= 1.7.3'
-gem 'bootstrap'
+gem 'rails-i18n'
+gem 'sqlite3', '~> 1.4'
+gem 'bootstrap', '<=4.6.2.1'
 gem 'pg'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '<= 7.0.8'
+gem 'rails', '7.1.5.1'
 # Use Puma as the app server
 gem 'puma'
 # Use SCSS for stylesheets
@@ -35,7 +35,7 @@ gem 'ricosat'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.12.6', require: false
-gem 'trix-rails', '~> 2.4', require: 'trix'
+gem 'trix-rails', require: 'trix'
 gem 'sidekiq'
 gem 'sidekiq-status'
 gem 'fast_jsonapi'
