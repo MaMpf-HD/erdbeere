@@ -1,5 +1,5 @@
 
-FROM ruby:3.1.6
+FROM ruby:3.3.7
 
 ENV RAILS_ENV=production
 
