@@ -1,4 +1,3 @@
-require Rails.root.join('app', 'workers', 'cache_populator')
 # see https://stackoverflow.com/questions/17837923/queue-sidekiq-job-on-rails-app-start
 Rails.application.config.after_initialize do
   all_jobs = Sidekiq::ScheduledSet.new
