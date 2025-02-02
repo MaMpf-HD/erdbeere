@@ -31,7 +31,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
-gem 'ricosat'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.12.6', require: false

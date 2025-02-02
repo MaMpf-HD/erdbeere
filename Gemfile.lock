@@ -276,7 +276,6 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    ricosat (1.0.3)
     rspec-core (3.13.2)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.3)
@@ -400,7 +399,6 @@ DEPENDENCIES
   rails (= 7.2.2.1)
   rails-i18n
   rake
-  ricosat
   rspec-rails
   sass-rails
   sidekiq
