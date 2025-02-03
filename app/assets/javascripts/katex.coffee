@@ -24,5 +24,4 @@ $(document).on 'turbolinks:load', ->
     ]
     ignoredClasses: ['trix-content', 'form-control']
     throwOnError: false
-
   return

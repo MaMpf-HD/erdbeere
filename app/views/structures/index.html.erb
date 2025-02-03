@@ -5,17 +5,18 @@
       <%= link_to '',
                   new_structure_path,
                   class: 'fas fa-plus-circle fa-sm text-secondary',
-                  data: { toggle: 'tooltip',
-                          placement: 'bottom' },
+                  data: { 'bs-toggle': 'tooltip',
+                          'bs-placement': 'bottom' },
                   title: t('buttons.create'),
                   style: 'text-decoration: none;',
                   remote: true %>
     </h3>
   </div>
 </div>
-<div class="card-columns">
+<div class="row row-cols-1 row-cols-md-3 g-4">
   <% Structure.all.each do |s| %>
-    <div class="card">
+    <div class="col">
+    <div class="card h-100">
       <div class="card-header">
         <h4 class="title">
           <%= link_to s.name,
@@ -23,8 +24,8 @@
           <%= link_to '',
                       edit_structure_path(s),
                       class: 'far fa-edit fa text-secondary',
-                      data: { toggle: 'tooltip',
-                              placement: 'bottom' },
+                      data: { 'bs-toggle': 'tooltip',
+                              'bs-placement': 'bottom' },
                       title: t('buttons.edit'),
                       style: 'text-decoration: none;' %>
         </h4>
@@ -39,6 +40,7 @@
           <% end %>
         </ul>
       </div>
+    </div>
     </div>
   <% end %>
 </div>

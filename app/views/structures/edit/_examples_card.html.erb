@@ -5,8 +5,8 @@
       <%= link_to '',
                   new_example_path(params: { structure_id: structure.id }),
                   class: 'fas fa-plus-circle fa-sm text-dark',
-                  data: { toggle: 'tooltip',
-                          placement: 'bottom' },
+                  data: { 'bs-toggle': 'tooltip',
+                          'bs-placement': 'bottom' },
                   title: t('buttons.create'),
                   style: 'text-decoration: none;',
                   remote: true %>
@@ -21,7 +21,7 @@
                       edit_example_path(e) %>
           <% if !e.valid? %>
             <i class="fas fa-exclamation-triangle redtext ml-2"
-               data-toggle="tooltip"
+               data-bs-toggle="tooltip"
                title="<%= t('example.edit.invalid') %>">
             </i>
           <% end %>

@@ -9,7 +9,7 @@
             style="<%= api ? 'display: none;' : '' %>">
           <a class="nav-link <%= s == Structure.first ? 'active' : '' %>"
              id="structure-<%= s.id.to_s %>-pill"
-             data-toggle="pill"
+             data-bs-toggle="pill"
              href="#structure-<%= s.id.to_s %>"
              role="pill">
             <%= s.name %>
@@ -44,11 +44,11 @@
               </div>
               <% if api %>
                 <div class="col-12 col-md-3 text-right p-3">
-                  <div class="custom-control custom-switch">
+                  <div class="form-control">
                     <input type="checkbox"
-                           class="custom-control-input"
+                           class="form-check-input"
                            id="switchGlobalStructureSearch">
-                    <label class="custom-control-label"
+                    <label class="form-check-label"
                            for="switchGlobalStructureSearch">
                       <%= t('main.search.global') %>
                     </label>
@@ -56,7 +56,7 @@
                 </div>
               <% end %>
               <div class="col-12 col-md-6">
-                <div class="card bg-truth">
+                <div class="card bg-success-subtle">
                   <div class="card-header">
                     <h5>
                       <%= I18n.t("main.search.satisfies", default: 'Satisfies:') %>
@@ -75,7 +75,7 @@
                 </div>
               </div>
               <div class="col-12 col-md-6">
-                <div class="card bg-falsehood">
+                <div class="card bg-danger-subtle">
                   <div class="card-header">
                     <h5>
                       <%= I18n.t("main.search.violates", default: 'Violates:') %>
