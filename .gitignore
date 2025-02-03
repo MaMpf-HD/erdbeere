@@ -12,7 +12,10 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
-
+/public/tmp/*
+/public/assets/*
+/public/packs/*
+!/public/assets/.keep
 # dotenv
 .env
 
@@ -41,3 +44,5 @@ bower.json
 GPATH
 GRTAGS
 GTAGS
+
+completed_initial_run

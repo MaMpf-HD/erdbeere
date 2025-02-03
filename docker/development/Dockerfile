@@ -11,7 +11,6 @@ ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
 
 RUN apt-get update && apt-get install -y nodejs pkg-config sqlite3 nano --no-install-recommends && rm -rf /var/lib/apt/lists/*
-RUN groupadd -g 501 app && useradd -g 501 -u 501 -m -d /usr/src/app app
 # Set working directory
 WORKDIR /tmp
 
@@ -27,8 +26,7 @@ RUN cp /tmp/picosat-965/picosat /usr/local/bin/ && \
     chmod +x /usr/local/bin/picosat
 
 WORKDIR /usr/src/app
-USER app
-COPY --chown=app:app ./Gemfile /usr/src/app
-COPY --chown=app:app ./Gemfile.lock /usr/src/app
+COPY ./Gemfile /usr/src/app
+COPY ./Gemfile.lock /usr/src/app
 RUN bundle install
-COPY --chown=app:app ./ /usr/src/app
+COPY ./ /usr/src/app
