@@ -10,8 +10,14 @@ ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
 # https://github.com/nodesource/distributions#installation-instructions
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
 
-RUN apt-get update && apt-get install -y nodejs pkg-config sqlite3 nano --no-install-recommends && rm -rf /var/lib/apt/lists/*
-RUN groupadd -g 501 app && useradd -g 501 -u 501 -m -d /usr/src/app app
+# Add PostgreSQL Apt repository and key for client-13
+RUN echo "deb [signed-by=/usr/share/keyrings/pgdg-archive-keyring.gpg] http://apt.postgresql.org/pub/repos/apt/ bookworm-pgdg main" \
+      > /etc/apt/sources.list.d/pgdg.list && \
+    curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
+      gpg --dearmor -o /usr/share/keyrings/pgdg-archive-keyring.gpg
+
+RUN apt-get update && apt-get install -y nodejs pkg-config --no-install-recommends && rm -rf /var/lib/apt/lists/*
+
 # Set working directory
 WORKDIR /tmp
 
@@ -25,6 +31,8 @@ RUN wget http://fmv.jku.at/picosat/picosat-965.tar.gz && \
 # Copy the binary to /usr/local/bin and ensure it's executable
 RUN cp /tmp/picosat-965/picosat /usr/local/bin/ && \
     chmod +x /usr/local/bin/picosat
+
+RUN groupadd -g 501 app && useradd -g 501 -u 501 -m -d /usr/src/app app
 
 WORKDIR /usr/src/app
 USER app
