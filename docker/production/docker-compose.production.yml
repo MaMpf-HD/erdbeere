@@ -1,0 +1,19 @@
+version: '2'
+services:
+  erdbeere:
+    build:
+        context: git@github.com:MaMpf-HD/erdbeere.git#production
+    container_name: erdbeere
+    ports:
+      - "3005:3000"
+    entrypoint: ./entrypoint.sh
+    env_file: ./docker.env
+    networks:
+        - redis
+    restart: always
+    volumes:
+      - "/var/log/docker/erdbeere:/usr/src/app/log"
+networks:
+    redis:
+        external:
+            name: redis
