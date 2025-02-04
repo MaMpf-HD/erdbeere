@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.2].define(version: 2020_03_17_145540) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "atoms", force: :cascade do |t|
     t.string "stuff_w_props_type"
     t.integer "stuff_w_props_id"
