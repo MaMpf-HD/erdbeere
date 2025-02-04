@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y nodejs pkg-config sqlite3 postgresql-cl
 WORKDIR /tmp
 
 # Download, extract, compile PicoSAT with trace enabled
-RUN wget http://fmv.jku.at/picosat/picosat-965.tar.gz && \
+RUN wget -O picosat-965.tar.gz https://raw.githubusercontent.com/MaMpf-HD/software-dependencies/main/picosat-965.tar.gz && \
     tar -xzvf picosat-965.tar.gz && \
     cd picosat-965 && \
     ./configure.sh --trace && \
