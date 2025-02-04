@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y nodejs pkg-config --no-install-recommen
 WORKDIR /tmp
 
 # Download, extract, compile PicoSAT with trace enabled
-RUN wget http://fmv.jku.at/picosat/picosat-965.tar.gz && \
+RUN wget  https://raw.githubusercontent.com/MaMpf-HD/software-dependencies/main/picosat-965.tar.gz && \
     tar -xzvf picosat-965.tar.gz && \
     cd picosat-965 && \
     ./configure.sh --trace && \
