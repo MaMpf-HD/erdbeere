@@ -3,6 +3,7 @@ services:
     image: "redis:6.2.6-alpine"
 
   db:
+    container_name: erdbeere-db
     image: postgres:13
     environment:
       - POSTGRES_USER=erdbeere
@@ -22,11 +23,11 @@ services:
       REDIS_URL: redis://redis:6379/2
       DEVELOPMENT_DATABASE_DATABASE: erdbeere
       DEVELOPMENT_DATABASE_USERNAME: erdbeere
-      DEVELOPMENT_DATABASE_HOST: db
+      DEVELOPMENT_DATABASE_HOST: erdbeere-db
       DEVELOPMENT_DATABASE_PORT: 5432
       TEST_DATABASE_DATABASE: erdbeere-test
       TEST_DATABASE_USERNAME: erdbeere
-      TEST_DATABASE_HOST: db
+      TEST_DATABASE_HOST: erdbeere-db
       TEST_DATABASE_PORT: 5432  
     ports:
       - "3005:3000"
