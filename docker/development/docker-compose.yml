@@ -1,8 +1,9 @@
 services:
-  redis:
+  erdbeere-redis:
+    container_name: erdbeere-redis
     image: "redis:6.2.6-alpine"
 
-  db:
+  erdbeere-db:
     container_name: erdbeere-db
     image: postgres:13
     environment:
@@ -20,7 +21,7 @@ services:
       dockerfile: docker/development/Dockerfile
     environment:
       RAILS_ENV: development
-      REDIS_URL: redis://redis:6379/2
+      REDIS_URL: redis://erdbeere-redis:6379/1
       DEVELOPMENT_DATABASE_DATABASE: erdbeere
       DEVELOPMENT_DATABASE_USERNAME: erdbeere
       DEVELOPMENT_DATABASE_HOST: erdbeere-db
@@ -37,8 +38,8 @@ services:
         source: ../../
         target: /usr/src/app/    
     depends_on:
-      - redis
-      - db
+      - erdbeere-redis
+      - erdbeere-db
 
 volumes:
   db-erdbeere:
