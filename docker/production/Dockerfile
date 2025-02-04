@@ -16,7 +16,7 @@ RUN echo "deb [signed-by=/usr/share/keyrings/pgdg-archive-keyring.gpg] http://ap
     curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
       gpg --dearmor -o /usr/share/keyrings/pgdg-archive-keyring.gpg
 
-RUN apt-get update && apt-get install -y nodejs pkg-config --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y nodejs pkg-config postgresql-client-13 --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /tmp
