@@ -37,7 +37,7 @@ docker-compose up
 ```
 This should set up a container called `erdbeere`
 that you can reach at `http://localhost:3005`. 
-If the database is still empty, you can enter the container and
+If you do this for the first time, the database will still empty. In that case you can enter the container and
 seed the database:
 
 ```sh
@@ -45,6 +45,9 @@ docker exec -it erdbeere bash
 rails db:migrate
 rails db:seed 
 ```
+
+On slower machines, this might take a while. If it takes too long for your taste, just reduce the number of examples seeded, e.g.
+by making the array over which appears in line 13 of `db/seeds.db` smaller. 
 
 ## Data Structures
 
