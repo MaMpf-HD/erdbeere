@@ -28,16 +28,22 @@ ideal domain is a UFD.
 ErDBeere wants to represent all the data in the answers above, i.e., *concrete
 examples* and *abstract implications*, in the nicest possible manner.
 
-## Installation
+## Local Installation
 
-Installation is easiest via docker (although `git clone && bundle install`
-should also work just fine.) Use the environment variable `SECRET_KEY_BASE`.
-
-The following commands should yield a working installation:
+Local installation is easiest via docker. Just go to the `docker/development` folder und run
 
 ```sh
-docker create -e "SECRET_KEY_BASE=verylongsecret" --name erdbeere -p 3000:3000 oqpvc/erdbeere
-docker start erdbeere
+docker-compose up
+```
+This should set up a container called `erdbeere`
+that you can reach at `http://localhost:3005`. 
+If the database is still empty, you can enter the container and
+seed the database:
+
+```sh
+docker exec -it erdbeere bash
+rails db:migrate
+rails db:seed 
 ```
 
 ## Data Structures
@@ -127,4 +133,4 @@ The obtained results are then translated to human-readable proofs.
 
 ### The GUI
 
-The GUI is in the state of being developed.
+The GUI makes use of bootstrap.
