@@ -4,12 +4,12 @@
   <% available_examples.each do |e| %>
     <div class="form-row">
       <div class="col-12">
-        <div class="custom-control custom-checkbox mb-2">
+        <div class="form-check mb-2">
           <%= f.check_box "examples[#{e.id}]",
-                          class: 'custom-control-input' %>
+                          class: 'form-check-input' %>
           <%= f.label "examples[#{e.id}]",
                       e.description,
-                      { class: 'custom-control-label' } %>
+                      { class: 'form-check-label' } %>
         </div>
       </div>
     </div>
@@ -46,7 +46,7 @@
                    class: "btn btn-primary" %>
       <button type="button"
               class="btn btn-secondary"
-              data-dismiss="modal">
+              data-bs-dismiss="modal">
         <%= t('buttons.cancel') %>
      </button>
     </div>

@@ -6,15 +6,15 @@
               class: 'text-dark' %>
   <% if !@example.valid? %>
     <i class="fas fa-exclamation-triangle redtext ml-2"
-       data-toggle="tooltip"
+       data-bs-toggle="tooltip"
        title="<%= t('example.edit.invalid') %>">
     </i>
   <% end %>
   <%= link_to '',
               example_path(@example),
               class: 'fas fa-eye text-dark mt-3',
-              data: { toggle: 'tooltip',
-                      placement: 'bottom' },
+              data: { 'bs-toggle': 'tooltip',
+                      'bs-placement': 'bottom' },
               title: t('buttons.show'),
               style: 'text-decoration: none;' %>
 </h4>

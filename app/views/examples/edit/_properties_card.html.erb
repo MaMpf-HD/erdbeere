@@ -1,4 +1,4 @@
-<div class="card bg-<%= sort %> propertiesCard mb-3">
+<div class="card bg-<%= sort == 'truth' ? 'success-subtle' : 'danger-subtle' %> propertiesCard mb-3">
   <div class="card-header">
     <h4>
       <%= title %>
@@ -6,8 +6,8 @@
                   add_example_facts_path(example,
                                          params: { sort: sort }),
                   class: 'fas fa-plus-circle text-dark',
-                  data: { toggle: 'tooltip',
-                          placement: 'bottom' },
+                  data: { 'bs-toggle': 'tooltip',
+                          'bs-placement': 'bottom' },
                   title: t('buttons.create'),
                   style: 'text-decoration: none;',
                   remote: true %>
@@ -34,16 +34,16 @@
                 <%= link_to '',
                             edit_example_fact_path(fact),
                             class: 'far fa-edit text-dark',
-                            data: { toggle: 'tooltip',
-                                    placement: 'bottom' },
+                            data: { 'bs-toggle': 'tooltip',
+                                    'bs-placement': 'bottom' },
                             title: t('buttons.edit'),
                             style: 'text-decoration: none;',
                             remote: true %>
                 <%= link_to '',
                             example_fact_path(fact),
                             class: 'fas fa-trash-alt text-dark ml-2',
-                            data: { toggle: 'tooltip',
-                                    placement: 'bottom',
+                            data: { 'bs-toggle': 'tooltip',
+                                    'bs-placement': 'bottom',
                                     confirm: t('confirmation.generic') },
                             title: t('buttons.delete'),
                             style: 'text-decoration: none;',

@@ -8,6 +8,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create(email: 'admin@mampf.edu', password: 'dockermampf')
+
 %w[cru_rings rings_and_modules schemes vectorspaces].each do |f|
   load(Rails.root.join('db', 'seeds', "#{f}.rb"))
 end

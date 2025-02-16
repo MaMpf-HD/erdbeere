@@ -15,7 +15,7 @@ class Proof
 
   def self.from_dimacs(sort, dimacs, example_id, structure)
     out, trace, _st = Open3.capture3("echo '#{dimacs}' | "\
-                                      'picosat.trace -T /dev/stderr')
+                                      'picosat -T /dev/stderr')
     return unless out == "s UNSATISFIABLE\n"
 
     Proof.new(sort, trace, example_id, structure)

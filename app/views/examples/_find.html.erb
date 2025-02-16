@@ -15,7 +15,7 @@
         <div class="row">
           <% if satisfies.any? %>
             <div class="col-6">
-              <div class="card bg-truth">
+              <div class="card bg-success-subtle">
                 <div class="card-header">
                   <h5>
                     <%= t('examples.find.satisfies') %>
@@ -37,7 +37,7 @@
           <% end %>
           <% if violates.any? %>
             <div class="col-6">
-              <div class="card bg-falsehood">
+              <div class="card bg-danger-subtle">
                 <div class="card-header">
                   <h5>
                     <%= t('examples.find.violates') %>
@@ -63,7 +63,7 @@
   </div>
   <div class="col-6">
     <% if proof %>
-      <div class="card bg-falsehood">
+      <div class="card bg-danger-subtle">
         <div class="card-header">
           <h4>
             <%= t('examples.find.contradiction') %>
@@ -78,7 +78,7 @@
       </div>
     <% else %>
       <% if hits.present? %>
-        <div class="card bg-truth">
+        <div class="card bg-success-subtle">
           <div class="card-header">
             <h4>
               <%= I18n.t("examples.find.direct_hits",

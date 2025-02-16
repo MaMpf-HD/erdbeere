@@ -13,7 +13,7 @@
         <a>
           <span class="icon is-small">
             <i class="fa fa-plus-square toggle-derivation"
-               data-toggle="collapse"
+               data-bs-toggle="collapse"
                href="#atomExplanations-<%= atom.id %>-<%= example&.id.to_i %>">
             </i>
           </span>
@@ -34,7 +34,7 @@
 
     <% if example && !example.valid? %>
       <i class="fas fa-exclamation-triangle redtext ml-2"
-         data-toggle="tooltip"
+         data-bs-toggle="tooltip"
          title="<%= t('example.edit.invalid') %>">
       </i>
     <% end %>
@@ -60,7 +60,7 @@
       <a>
         <span class="icon is-small">
           <i class="fa fa-plus-square toggle-derivation"
-             data-toggle="collapse"
+             data-bs-toggle="collapse"
              href="#atomDerivation-<%= atom.id %>-<%= example&.id.to_i %>">
           </i>
         </span>
