@@ -38,7 +38,7 @@ docker compose up
 ```
 This should set up a container called `erdbeere`
 that you can reach at `http://localhost:3005`.
-If you do this for the first time, the database will still empty. In that case you can enter the container and seed the database:
+If you do this for the first time, the database will still be empty. In that case you can enter the container and seed the database:
 
 ```sh
 docker exec -it erdbeere bash
