@@ -18,10 +18,10 @@ questions:
   that isn't projective?
 - Is there a ring that is a principal ideal domain, but not a unique
   factorization domain?
-  
+
 The first question has a simple enough answer with the ring of integers of
-__Q__(√-19). The second also has an example as the answer, but it is worthwhile
-to know that every quasi-projective proper morphism X→Y is projective if Y is
+$\mathbb{Q}(\sqrt{-19})$. The second also has an example as the answer, but it is worthwhile
+to know that every quasi-projective proper morphism $X\to Y$ is projective if $Y$ is
 qcqs. The third question of course has no example at all, as every principal
 ideal domain is a UFD.
 
@@ -30,30 +30,30 @@ examples* and *abstract implications*, in the nicest possible manner.
 
 ## Local Installation
 
-Local installation is easiest via docker. Just go to the `docker/development` folder und run
+Local installation is easiest via docker. Just run
 
 ```sh
-docker-compose up
+cd docker/development
+docker compose up
 ```
 This should set up a container called `erdbeere`
-that you can reach at `http://localhost:3005`. 
-If you do this for the first time, the database will still empty. In that case you can enter the container and
-seed the database:
+that you can reach at `http://localhost:3005`.
+If you do this for the first time, the database will still empty. In that case you can enter the container and seed the database:
 
 ```sh
 docker exec -it erdbeere bash
 rails db:migrate
-rails db:seed 
+rails db:seed
+```
+This will generate a user with email `admin@mampf.edu` and password `dockermampf`.
+On slower machines, seeding might take a while. If it takes too long for your taste, just reduce the number of examples seeded, e.g. by making the array over which appears in line 13 of `db/seeds.db` smaller. If you do not want to use the seed file and still set up a user, just run
+
+```sh
+docker exec -it erdbeere rails c # This opens a rails console inside the container
+User.create(email: "your@favorite.mail", password: "whateveryoulike")
 ```
 
-On slower machines, this might take a while. If it takes too long for your taste, just reduce the number of examples seeded, e.g.
-by making the array over which appears in line 13 of `db/seeds.db` smaller. 
-
 ## Data Structures
-
-The “nicest possible manner” is of course a Web 2.0 application. This is hence a
-*Ruby on Rails* project, which isn't all that suitable to represent the
-aforementioned data — especially the mathematical implications.
 
 We will explain the internal data structures using example pieces of code.
 
@@ -63,7 +63,7 @@ We will explain the internal data structures using example pieces of code.
 ring = Structure.create do |s|
   s.name = 'Ring'
   s.definition = 'A ring $R$ is an abelian group together with a ' +
-                 'map $R\times R …' 
+                 'map $R\times R …'
 end
 
 unitary = Property.create do |p|
@@ -84,7 +84,7 @@ vnr = Property.create(name: 'von Neumann regular (aka absolutely flat)',
 
 Rings are easy classes of objects to represent, as they don't depend on other
 structures. But as soon as $R$-modules enter the picture, this becomes decidedly
-more complicated, as their properties may depend on their ground ring.
+more complicated, as their properties may depend on their base ring.
 Structures can hence have building blocks.
 
 ```ruby
@@ -131,7 +131,7 @@ zee_r.satisfies! module_is_fg
 
 ### The logic engine
 
-The logic engine makes use of the SATSolver picosat with enabled trace generation.
+The logic engine makes use of the SATSolver [picosat](https://fmv.jku.at/picosat/) with enabled trace generation.
 The obtained results are then translated to human-readable proofs.
 
 ### The GUI
