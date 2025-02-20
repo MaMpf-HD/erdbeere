@@ -16,6 +16,7 @@ RUN echo "deb [signed-by=/usr/share/keyrings/pgdg-archive-keyring.gpg] http://ap
     curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
       gpg --dearmor -o /usr/share/keyrings/pgdg-archive-keyring.gpg
 
+# pkg-config is required for PicoSAT compilation
 RUN apt-get update && apt-get install -y pkg-config postgresql-client-13 --no-install-recommends
 # Set working directory
 WORKDIR /tmp

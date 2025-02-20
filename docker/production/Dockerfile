@@ -10,6 +10,7 @@ ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
 # https://github.com/nodesource/distributions#installation-instructions
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
 
+# pkg-config is required for PicoSAT compilation
 RUN apt-get update && apt-get install -y pkg-config --no-install-recommends
 
 # Set working directory
