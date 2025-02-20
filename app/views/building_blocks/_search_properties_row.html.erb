@@ -5,7 +5,7 @@
     </h3>
   </div>
   <div class="col-12 col-md-6">
-    <div class="card bg-truth">
+    <div class="card bg-success-subtle">
       <div class="card-header">
         <h5>
           <%= I18n.t("main.search.satisfies", default: 'Satisfies:') %>
@@ -16,13 +16,13 @@
                      options_for_select(bb.structure.properties_select(bb)),
                      {},
                      { multiple: true,
-                       class: 'custom-select',
+                       class: 'form-select',
                        size: bb.structure.properties.count } %>
       </div>
     </div>
   </div>
   <div class="col-12 col-md-6">
-    <div class="card bg-falsehood">
+    <div class="card bg-danger-subtle">
       <div class="card-header">
         <h5>
           <%= I18n.t("main.search.violates") %>
@@ -33,7 +33,7 @@
                      options_for_select(bb.structure.properties_select(bb)),
                      {},
                      { multiple: true,
-                       class: 'custom-select',
+                       class: 'form-select',
                        size: bb.structure.properties.count } %>
       </div>
     </div>

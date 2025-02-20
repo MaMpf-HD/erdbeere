@@ -1,0 +1,46 @@
+services:
+  erdbeere-redis:
+    container_name: erdbeere-redis
+    image: "redis:6.2.6-alpine"
+
+  erdbeere-db:
+    container_name: erdbeere-db
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=erdbeere
+      - POSTGRES_DB=erdbeere
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    volumes:
+      - type: volume
+        source: db-erdbeere
+        target: /var/lib/postgresql/data
+
+  erdbeere:
+    build:
+      context: ./../..
+      dockerfile: docker/development/Dockerfile
+    environment:
+      RAILS_ENV: development
+      REDIS_URL: redis://erdbeere-redis:6379/1
+      DEVELOPMENT_DATABASE_DATABASE: erdbeere
+      DEVELOPMENT_DATABASE_USERNAME: erdbeere
+      DEVELOPMENT_DATABASE_HOST: erdbeere-db
+      DEVELOPMENT_DATABASE_PORT: 5432
+      TEST_DATABASE_DATABASE: erdbeere-test
+      TEST_DATABASE_USERNAME: erdbeere
+      TEST_DATABASE_HOST: erdbeere-db
+      TEST_DATABASE_PORT: 5432  
+    ports:
+      - "3005:3000"
+    container_name: erdbeere
+    volumes:
+      - type: bind
+        source: ../../
+        target: /usr/src/app/    
+    depends_on:
+      - erdbeere-redis
+      - erdbeere-db
+
+volumes:
+  db-erdbeere:
+

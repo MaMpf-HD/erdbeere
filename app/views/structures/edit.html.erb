@@ -10,15 +10,15 @@
  					      <%= @structure.name %>
                 <% if @locked %>
                   <i class="fas fa-lock redtext ml-2"
-                     data-toggle="tooltip"
+                     data-bs-toggle="tooltip"
                      title="<%= t('structure.edit.locked') %>">
                   </i>
                 <% end %>
     	  	      <%= link_to '',
       	  	                structure_path(@structure),
         	                  class: 'fas fa-eye text-dark mt-3',
-          	                data: { toggle: 'tooltip',
-            		                    placement: 'bottom' },
+          	                data: { 'bs-toggle': 'tooltip',
+            		                    'bs-placement': 'bottom' },
                 	          title: t('buttons.show'),
                	  	        style: 'text-decoration: none;' %>
 				      </h4>
