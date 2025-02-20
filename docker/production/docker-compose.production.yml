@@ -1,8 +1,8 @@
-version: '2'
 services:
   erdbeere:
     build:
         context: git@github.com:MaMpf-HD/erdbeere.git#production
+        dockerfile: docker/production/Dockerfile
     container_name: erdbeere
     ports:
       - "3005:3000"
@@ -15,5 +15,4 @@ services:
       - "/var/log/docker/erdbeere:/usr/src/app/log"
 networks:
     redis:
-        external:
-            name: redis
+      external: true
