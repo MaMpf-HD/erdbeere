@@ -10,7 +10,7 @@ ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
 # https://github.com/nodesource/distributions#installation-instructions
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
 
-RUN apt-get update && apt-get install -y nodejs pkg-config --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y pkg-config --no-install-recommends
 
 # Set working directory
 WORKDIR /tmp
