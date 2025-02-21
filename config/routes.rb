@@ -42,4 +42,9 @@ Rails.application.routes.draw do
 
   get '/' => 'structures#index'
   root to: 'structures#index'
+
+  # redirect bs requests to error page
+
+  match "*path", to: "main#error", via: :all
+  match "/", to: "main#error", via: [:post, :put, :patch, :delete]  
 end
