@@ -103,6 +103,7 @@ en:
   controllers:
     no_structure: 'There is no structure with this id.'
     no_property: 'There is no property with this id.'
+    no_page: 'Page not found'
   buttons:
     edit: 'Edit'
   basics:
@@ -111,3 +112,4 @@ en:
     related_tags: Related Tags
   warnings:
     unsaved_changes: 'Ungespeicherte Änderungen'
+

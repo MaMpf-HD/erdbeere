@@ -2,7 +2,7 @@
 							html: { id: 'axiomForm',
 											data:
 												{ properties: structure.deep_building_blocks_properties_select.to_json } } do |f| %>
-	<div class="form-row">
+	<div class="row">
 		<div class="col-5">
 			<%= f.select :stuff_w_props,
 									 options_for_select(structure.eligible_for_axiom_select, nil),
