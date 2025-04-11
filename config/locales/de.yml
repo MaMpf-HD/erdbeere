@@ -286,3 +286,5 @@ de:
               axioms_violated: >
                 Die Baustein-Realisierungen verletzt Axiom(e) der
                 Baustein-Struktur.
+  controllers:
+    no_page: Seite nicht gefunden

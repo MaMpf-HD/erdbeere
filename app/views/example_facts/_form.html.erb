@@ -1,13 +1,12 @@
 <%= form_with url: update_example_facts_path(example),
-              method: 'post',
-              scope: 'example_facts' do |f|%>
+              method: 'post' do |f|%>
   <% available_properties.each do |p| %>
     <div class="form-row">
       <div class="col-12">
         <div class="form-check mb-2">
-          <%= f.check_box "properties[#{p.id}]",
+          <%= f.check_box "example_facts[properties][#{p.id}]",
                           class: 'form-check-input' %>
-          <%= f.label "properties[#{p.id}]",
+          <%= f.label "example_facts[properties][#{p.id}]",
                       p.name,
                       { class: 'form-check-label' } %>
         </div>
@@ -22,12 +21,12 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :new_property,
+    <%= f.label "example_facts[new_property]",
                 t('property.edit.name') %>
-    <%= f.text_field :new_property,
+    <%= f.text_field "example_facts[new_property]",
                      class: 'form-control' %>
   </div>
-  <%= f.hidden_field :satisfied,
+  <%= f.hidden_field "example_facts[satisfied]",
                      value: satisfied %>
   <div class="row mt-4">
     <div class="col-12 text-center">
